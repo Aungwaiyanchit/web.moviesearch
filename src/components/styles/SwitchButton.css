@@ -1,0 +1,68 @@
+.swtich{
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.swtich input{
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: #1e1e1e;
+  outline: none;
+}
+
+.swtich input::before,
+.swtich input::after
+{
+  z-index: 2;
+  position: absolute;
+  top: -70%;
+  /* transform: translateY(-80%); */
+  font-weight: bolder;
+}
+
+.swtich input::before{
+  content: 'Today';
+  left: 20px;
+}
+
+.swtich input::after{
+  content: 'Weekly';
+  right: 20px;
+}
+
+.swtich input:checked{
+  background: cyan;
+}
+
+.swtich label{
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 20px;
+}
+
+.swtich input{
+  transition: 0.24s;
+}
+
+.swtich input:checked::after,
+.swtich input:checked::before{
+  color: #fff;
+  transition: color 0.5s;
+}
+
+.swtich input:checked + label{
+  left: 10px;
+  right: 100px;
+  background: #1e1e1e;
+  transition: left 0.5s , right 0.5s 0.2s;
+}
+.swtich input:not(:checked) {
+  background: #1e1e1e;
+  transition:  background 0.5s;
+}

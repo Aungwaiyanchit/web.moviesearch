@@ -1,0 +1,36 @@
+
+.mcard{
+    display: flex;
+    width: 100vh;
+    scroll-behavior: smooth;
+    align-items: center;
+    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.35);
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.mcard img{
+    width: 93px;
+    height: 150px;
+    border-radius: 5px 0px 0px 5px;
+    user-select: none;
+}
+
+.overview, .date{
+    color: gray;
+    font-size: 14px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+
+@media screen and (max-width: 768px){
+    .mcard{
+        width: calc(100vw - 50px)
+    }
+}

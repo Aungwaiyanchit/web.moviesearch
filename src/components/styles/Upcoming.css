@@ -1,0 +1,93 @@
+.slider-container{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    padding-bottom: 1rem;
+    margin: 1rem;
+}
+.heading {
+    padding-top: 1rem;
+    padding-left: 1rem;
+   
+}
+.slide-card{
+   width: 100%;
+   transition: 0.3s;
+}
+.slide-card img{
+    width: 120px;
+    margin: 10px;
+    border-radius: 10px;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+.slider-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    border-radius: 20%;
+}
+
+   
+.slider-container::-webkit-scrollbar-thumb {
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px
+  }
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    flex-direction: column;
+}
+
+.title{
+    color: black;
+    text-align: left;
+   font-weight: bold;
+   font-size: 14px;
+}
+
+.date{
+    color: gray;
+   font-size: small;
+  
+}
+
+
+.heading{
+    display: flex;
+    align-items: center;
+
+}
+span{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/* .radio-group input{
+    display: none;
+} */
+
+.button-container button{
+    margin-left: 1rem;
+    margin-top: 10px;
+    min-width: 4rem;
+    padding: 0.3rem 0.3rem;
+    border: none;
+    background: white;
+    border-radius: 1rem;
+    border: 2px solid rgb(28, 36, 53);
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+button.active{
+    background: rgb(65, 98, 168);
+    color: white
+}
+
