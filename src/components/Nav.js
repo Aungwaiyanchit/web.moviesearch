@@ -8,7 +8,7 @@ import { IoMenuSharp } from 'react-icons/io5'
 
 export const Nav = () => {
     const [ open, setOpen ] = useState(false)
-    const [ input, setInput ] = useState('')
+    const [ input, setInput ] = useState(localStorage.getItem('lastVale')?.toString())
     const navigate = useNavigate()
     const [ searchParams, setSearchParams ] = useSearchParams()
     const [ isNavExpended, setIsNavExpended ] = useState(false)
@@ -35,7 +35,7 @@ export const Nav = () => {
   useEffect(() => {
     if (searchParams.get('q')){
       setOpen(true)
-      if(localStorage.getItem('lastVale')){setInput(localStorage.getItem('lastVale').toString())}
+      
     } else{
       setOpen(false)
     }
@@ -45,9 +45,7 @@ export const Nav = () => {
     if(input && open){
       document.addEventListener('keydown', onSearch)
       localStorage.setItem('lastVale', input)
-    } else{
-      localStorage.clear()
-    }
+    } 
     return () => document.removeEventListener('keydown', onSearch)
   },[input, open])
 

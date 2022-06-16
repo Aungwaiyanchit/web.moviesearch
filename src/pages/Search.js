@@ -1,24 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { useSearchParams, Outlet, NavLink, useLocation } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useSearchParams, Outlet, NavLink } from 'react-router-dom'
+import {  useSelector } from 'react-redux'
 import { MainPageLayout } from '../components/MainPageLayout'
-import { Results } from '../components/Results'
 import './styles/Search.css'
-import { getResutls } from '../services/api'
-import { SearchQuery } from '../features/search/searchSlice'
+
 
 export const Search = () => {
 
     const peopleresults = useSelector(state => state.search.results?.peopleResult)
     const tvresults = useSelector(state => state.search.results?.tvResult)
     const movieresults = useSelector(state => state.search.results?.movieResult)
-    const [ searchParams, setSearchParams ] = useSearchParams()
+    const [ searchParams ] = useSearchParams()
     const [ data, setData ] = useState({
       people: '', tv: '', movie: '', active: ""
     })
     const loading = useSelector(state => state.search.loading)
     const query = searchParams.get('q')
-    const dispatch = useDispatch()
     const max = Math.max(peopleresults?.total_results, tvresults?.total_results, movieresults?.total_results)
 
     useEffect(() => {

@@ -6,7 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 export const SearchMovie = () => {
 
   const [ results, setResutls ] = useState(null)
-  const [ searchParams, setSearchParams ] = useSearchParams()
+  const [ searchParams ] = useSearchParams()
   const query = searchParams.get('q')
 
   useEffect(() => {
