@@ -1,6 +1,5 @@
 
 .nav-container{
-    width: 100%;
     background: #05253b;
     display: flex;
     justify-content: space-around;
@@ -29,27 +28,27 @@ span, .Logo{
     border-bottom: 2px white solid;
     transition: 500ms ease-in;
 }
-
-.input{
+div{
+    width: auto;
+}
+.textinput{
     width: 100%;
-    opacity: 1;
     height: 3rem;
+    overflow: hidden;
     padding-left: 10px;
-    border: .3px solid gray;
 }
 form{
     position: relative;
 }
-.input:focus{
+.textinput:focus{
     outline: none;
 }
 .nav{
     position: sticky;
     top: 0;
-   width: 100%;
 }
-.input.hide{
-    opacity: 0;
+.textinput.hide{
+    display: none;
 }
 
 .btn-close{
@@ -60,6 +59,11 @@ form{
     cursor: pointer;
     font-size: 1rem;
     cursor: pointer;
+    display: block;
+
+}
+.btn-close.hide{
+    display: none;
 }
 .menu-icon{
     display: none;

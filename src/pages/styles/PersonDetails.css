@@ -1,0 +1,28 @@
+.detail-page{
+    display: flex;
+    justify-content: center;
+}
+.rightside{
+    padding: 2rem;
+    max-width: 976px;
+    width: calc(100vw - 80px - 300px);
+}
+
+.leftside{
+    padding: 2rem;
+}
+.leftside img {
+    width: 230px;
+    aspect-ratio: 2/3;
+    border-radius: 10px;
+}
+.full strong{
+    font-size: 14px;
+}
+.full p{
+    font-size: 12px;
+    margin-top: 0px;
+}
+.full .othername{
+    margin-bottom: 5px;
+}

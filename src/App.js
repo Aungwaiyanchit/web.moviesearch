@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import { Results } from './components/Results';
 import { Wrapper } from './components/Wrapper';
 import { Home } from './pages/Home'
@@ -15,7 +15,7 @@ import { Tvshow } from './pages/Tv-show';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Wrapper>
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -30,7 +30,7 @@ function App() {
         </Route>
       </Routes>
     </Wrapper>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

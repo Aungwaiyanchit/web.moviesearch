@@ -70,22 +70,20 @@ export const Nav = () => {
             )
            }
     </div>
-    {open ? (
       <div >
       <input 
-      className={ open ? 'input ' : 'input hide'}
+      className={ open ? 'textinput' : 'textinput hide'}
       placeholder='Search for a movie or Tv show'
       defaultValue={localStorage.getItem('lastVale')}
       onChange={() => setInput(inputRef.current.value)}
       onClick={onSearch}
       ref={inputRef}
       />
-      <AiOutlineClose className="btn-close" onClick={() => {
+      <AiOutlineClose className={ open? 'btn-close' : 'btn-close hide'}onClick={() => {
         localStorage.removeItem('lastVale')
         setInput('');
         }}/>
     </div>
-    ):null}
     </div>
  
   )

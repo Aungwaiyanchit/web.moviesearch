@@ -74,6 +74,7 @@
     .SearchPage {
         flex-direction: column;
         align-items: center;
+        overflow-x: hidden;
     }
     .filter-title{
         display: none;
@@ -81,12 +82,12 @@
     .filter-container{
         display: flex;
         flex-direction: row;
-        width: 100vw;
+        width: auto;
         height: 3rem;
         align-items: center;
         border-radius: 0px;
         overflow-x: auto;
-        margin-top: 0px;
+        margin: 0px;
     }
     .navbar-link{
         display: flex;
