@@ -14,13 +14,13 @@ export const MovieCard = ({result}) => {
 }
 
   return (
-    <Link to={'movie'+result.id} className="mcard">
+    <div className="mcard">
         <img src={result.poster_path ? img_url + result.poster_path  : No_image}/>
         <div className='info'>
                 <span className='title'>{result.name ? result.name : result.original_title}</span>
                 <span className='date'>{result.release_date ? result.release_date : result.first_air_date}</span>
                 <p className='overview'>{TextSlice(result.overview)}</p>
         </div>
-    </Link>
+    </div>
   )
 }

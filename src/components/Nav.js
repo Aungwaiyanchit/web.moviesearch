@@ -8,7 +8,7 @@ import { IoMenuSharp } from 'react-icons/io5'
 
 export const Nav = () => {
     const [ open, setOpen ] = useState(false)
-    const [ input, setInput ] = useState(localStorage.getItem('lastVale')?.toString())
+    const [ input, setInput ] = useState('')
     const navigate = useNavigate()
     const [ searchParams, setSearchParams ] = useSearchParams()
     const [ isNavExpended, setIsNavExpended ] = useState(false)
@@ -20,6 +20,14 @@ export const Nav = () => {
     ]
     const dispatch = useDispatch()
     const inputRef = useRef(null)
+    console.log(input);
+    useEffect(() => {
+      if(localStorage.getItem('q')){
+        setInput(localStorage.getItem('q'))
+      }else{
+        setInput('')
+      }
+    },[localStorage.getItem('q')])
 
   const onSearch =  (e) => {
    if(input){
@@ -28,6 +36,7 @@ export const Nav = () => {
         pathname: '/search',
         search: `?q=${input}`,
        })
+       localStorage.setItem('lastVale', input)
        dispatch(SearchQuery(input))
      }
    }
@@ -35,18 +44,20 @@ export const Nav = () => {
   useEffect(() => {
     if (searchParams.get('q')){
       setOpen(true)
-      
+      localStorage.setItem('lastVale', searchParams.get('q'))
     } else{
       setOpen(false)
+      localStorage.removeItem('lastVale')
     }
   },[searchParams.get('q')])
 
   useEffect(() => {
     if(input && open){
       document.addEventListener('keydown', onSearch)
-      localStorage.setItem('lastVale', input)
     } 
-    return () => document.removeEventListener('keydown', onSearch)
+    return () =>{ 
+      document.removeEventListener('keydown', onSearch)
+    }
   },[input, open])
 
  
@@ -70,7 +81,7 @@ export const Nav = () => {
             )
            }
     </div>
-      <div >
+      <div style={{ width: '100%'}}>
       <input 
       className={ open ? 'textinput' : 'textinput hide'}
       placeholder='Search for a movie or Tv show'
@@ -80,8 +91,8 @@ export const Nav = () => {
       ref={inputRef}
       />
       <AiOutlineClose className={ open? 'btn-close' : 'btn-close hide'}onClick={() => {
+        setInput('')
         localStorage.removeItem('lastVale')
-        setInput('');
         }}/>
     </div>
     </div>

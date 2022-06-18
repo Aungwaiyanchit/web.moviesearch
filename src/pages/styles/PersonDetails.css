@@ -26,3 +26,47 @@
 .full .othername{
     margin-bottom: 5px;
 }
+.name_for_mobile{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .detail-page{
+        flex-direction: column;
+    }
+    .leftside {
+        width: calc(100% - 50px);
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    .leftside img {
+        width: 180px;
+        aspect-ratio: 2/3;
+        border-radius: 10px;
+        align-self: center;
+    }
+    .name_for_mobile{
+        display: block;
+    }
+    .leftside.title{
+        align-items: center
+    }
+    .title{
+        text-align: center;
+    }
+    .rightside h1{
+        display: none;
+    }
+    .rightside {
+        width: calc(100% - 50px);
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .person-info{
+        display: grid;
+        grid-template-columns: 1fr 100px;
+    }
+    p{
+        font-size: 14px;
+    }
+}

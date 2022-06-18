@@ -21,8 +21,11 @@ export const PersonDetail = () => {
       <div className='detail-page'>
       <div className='leftside'>
         <img src={img_url + person?.profile_path} />
-        <div>
-          <h3 style={{ padding: '0px'}}>Information</h3>
+        <div className='title'>
+          <h2 className='name-for-mobile'>{person.name}</h2>
+        </div>
+        <h3 style={{ padding: '0px'}}>Information</h3>
+        <div className='person-info'>
           <div className='full'>
             <strong>Know as</strong>
             <p>{person.known_for_department}</p>

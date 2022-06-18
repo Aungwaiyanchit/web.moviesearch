@@ -19,7 +19,7 @@ export const Results = () => {
         if(movieresults?.results.length === 0 && 
             peopleresults?.results.length === 0 && 
             tvresults?.results.length === 0){
-            return (<div style={{ color: 'black'}}>There is no movie with your query</div>)
+            return (<div style={{ color: 'black', minWidth: '400px'}}>There is no movie with your query</div>)
         }else{
             if(max === movieresults?.total_results){
                 return (
