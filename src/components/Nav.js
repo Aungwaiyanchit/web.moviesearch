@@ -5,6 +5,7 @@ import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux/'
 import { SearchQuery } from '../features/search/searchSlice'
 import { IoMenuSharp } from 'react-icons/io5'
+import { TbMovie } from 'react-icons/tb'
 
 export const Nav = () => {
     const [ open, setOpen ] = useState(false)
@@ -66,7 +67,9 @@ export const Nav = () => {
     <div className='nav'>
       <div className='nav-container'>
       <IoMenuSharp className='menu-icon' onClick={() => setIsNavExpended(!isNavExpended)}/>
-       <span className='Logo'>Logo</span>
+
+        <span className='Stitle'><TbMovie className='logo'/>MOVIESEARCH</span>
+
         <div  className={!isNavExpended ? 'navitems' : 'navitems expanded'}>
             {navItems.map((item, index) => (
                 <NavLink key={index} to={item.path} className={({isActive}) => "nav-link" + (isActive ? " selected": "")}>{item.text} </NavLink>

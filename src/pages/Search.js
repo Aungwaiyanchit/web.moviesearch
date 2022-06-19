@@ -46,15 +46,15 @@ export const Search = () => {
         <div  className="SearchPage">
       <div className='filter-container'>
             <div className="filter-title">Filter Results</div>
-            <div className={data.active === 'people' ? 'navbar-link selected' : 'navbar-link '}>
+            <div className={data.active === 'people' ? 'navbar-link actived' : 'navbar-link '}>
               <NavLink to={`person?q=${query}`} onClick={() =>  setData({...data, active: 'people'})}>People</NavLink>
               <span>{peopleresults?.total_results}</span>
             </div>
-              <div className={data.active === 'tv' ? 'navbar-link selected' : 'navbar-link '}>
+              <div className={data.active === 'tv' ? 'navbar-link actived' : 'navbar-link '}>
                 <NavLink to={`tv?q=${query}`} onClick={() => setData({...data, active: 'tv'})}>Tv Shows</NavLink>
                 <span>{tvresults?.total_results}</span>
               </div>
-              <div className={data.active === 'movie' ? 'navbar-link selected' : 'navbar-link '}>
+              <div className={data.active === 'movie' ? 'navbar-link actived' : 'navbar-link '}>
                 <NavLink to={`movie?q=${query}`} onClick={() =>  setData({...data, active: 'movie'})}>Movie</NavLink>
                 <span>{movieresults?.total_results}</span>
                </div>

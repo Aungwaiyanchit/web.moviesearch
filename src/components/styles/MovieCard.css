@@ -1,7 +1,7 @@
 
 .mcard{
     display: flex;
-    width: 100vh;
+    max-width: calc(100vw - 82px) ;
     scroll-behavior: smooth;
     align-items: center;
     box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.35);

@@ -1,6 +1,7 @@
 .detail-page{
     display: flex;
     justify-content: center;
+    margin-top: 70px  ;
 }
 .rightside{
     padding: 2rem;

@@ -14,7 +14,12 @@ export const SearchTv = () => {
 
   const RednderResult = ({results}) => {
     return (
-      <div>
+      <div 
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        margin: 'auto'
+      }}>
       {  
         results !== null ? (
           results.results.map(result => (

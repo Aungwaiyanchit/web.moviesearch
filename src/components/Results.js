@@ -47,9 +47,7 @@ export const Results = () => {
     
   return (
        <div className='results-container'>
-           <div>
                {RednderResult()}
-           </div>
         </div>
   )
 }

@@ -1,0 +1,38 @@
+.MoviePage{
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+
+.mshow-card{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 120px;
+
+}
+
+.mshow-card img{
+    height: 225px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+.header .title{
+    color: black;
+   font-weight: bold;
+   font-size: 14px;
+}
+
+.date{
+    color: gray;
+   font-size: small;
+  
+}
